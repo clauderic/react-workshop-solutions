@@ -1,15 +1,13 @@
-import React, {Component} from 'react'
-import {render} from 'react-dom'
+import React, {Component} from 'react';
+import {render} from 'react-dom';
 
-import Example from '../../src'
+import WorkshopBoilerplate from '../../src';
 
-class Demo extends Component {
-  render() {
-    return <div>
-      <h1>workshop-solutions Demo</h1>
-      <Example/>
-    </div>
-  }
-}
+const DummyComponent = () => <div>Hello World</div>;
 
-render(<Demo/>, document.querySelector('#demo'))
+const ROUTES = [
+  {id: 'component', label: 'Components', component: DummyComponent, showSolution: true},
+  {id: 'events-state', label: 'Events & State', component: DummyComponent, showSolution: true},
+];
+
+render(<WorkshopBoilerplate routes={ROUTES} />, document.querySelector('#demo'));
