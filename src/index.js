@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import {Card, Stack, Heading, Page, Select, Tabs} from '@shopify/polaris';
 
 import '@shopify/polaris/styles.css';
-import './index.css';
 
 const SOLUTIONS = {
   'component': require('./solutions/component').default,

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 
 import WorkshopBoilerplate from '../../src';
+import '../../styles.css';
 
 const DummyComponent = () => <div>Hello World</div>;
 
