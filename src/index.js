@@ -31,7 +31,7 @@ export default class WorkshopBoilerplate extends Component {
     const {component: Route, showSolution, id} = routes[routeIndex];
 
     return (
-      <Page>
+      <div>
         <div className="select-wrapper">
           <Stack alignment="center">
             <Heading>Lecture:</Heading>
@@ -43,37 +43,39 @@ export default class WorkshopBoilerplate extends Component {
             />
           </Stack>
         </div>
-        <Card>
-          <Card.Section>
-            {!showSolution
-              ? <Route />
-              : (
-                <Tabs
-                  onSelect={this.handleTabSelect}
-                  selected={selectedTab}
-                  tabs={[
-                    {
-                      id: 'exercise',
-                      title: 'Exercise'
-                    },
-                    {
-                      id: 'solution',
-                      title: 'Solution'
-                    },
-                  ]}
-                >
-                  <div className="tab-content">
-                    {selectedTab === 0
-                      ? <Route />
-                      : React.createElement(SOLUTIONS[id])
-                    }
-                  </div>
-                </Tabs>
-              )
-            }
-          </Card.Section>
-        </Card>
-      </Page>
+        <Page>
+          <Card>
+            <Card.Section>
+              {!showSolution
+                ? <Route />
+                : (
+                  <Tabs
+                    onSelect={this.handleTabSelect}
+                    selected={selectedTab}
+                    tabs={[
+                      {
+                        id: 'exercise',
+                        title: 'Exercise'
+                      },
+                      {
+                        id: 'solution',
+                        title: 'Solution'
+                      },
+                    ]}
+                  >
+                    <div className="tab-content">
+                      {selectedTab === 0
+                        ? <Route />
+                        : React.createElement(SOLUTIONS[id])
+                      }
+                    </div>
+                  </Tabs>
+                )
+              }
+            </Card.Section>
+          </Card>
+        </Page>
+      </div>
     );
   }
 }
