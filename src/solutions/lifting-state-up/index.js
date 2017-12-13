@@ -9,7 +9,7 @@ export default class App extends React.Component {
     products: [],
   };
 
-  componentDidMount = () => {
+  componentDidMount() {
     fetch('https://www.kyliecosmetics.com/products.json')
       .then((response) => response.json())
       .then((response) => {
