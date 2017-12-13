@@ -14,7 +14,6 @@ export default class App extends React.Component {
     fetch('https://www.kyliecosmetics.com/products.json')
       .then((response) => response.json())
       .then((response) => {
-        console.log(response.products)
         this.setState({
           products: response.products,
         });
@@ -28,7 +27,7 @@ export default class App extends React.Component {
       <ul>
         {products.map((product) => {
           return (
-            <li>
+            <li key={product.id}>
               {product.title}
             </li>
           );

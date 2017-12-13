@@ -13,7 +13,6 @@ export default class App extends React.Component {
     fetch('https://www.kyliecosmetics.com/products.json')
       .then((response) => response.json())
       .then((response) => {
-        console.log(response.products)
         this.setState({
           products: response.products,
         });
@@ -29,6 +28,7 @@ export default class App extends React.Component {
   render() {
     const {filterString} = this.state;
     const filteredProducts = filterProducts(products, filterString);
+
     return (
       <div>
         <SearchInput onChange={this.handleFilter} />
