@@ -4,6 +4,10 @@
 
 import React from "react";
 
+function Title({children}) {
+  return (<h1>{children}</h1>);
+}
+
 export default class ProductList extends React.Component {
   state = {
     products: [],
@@ -23,16 +27,19 @@ export default class ProductList extends React.Component {
     const {products} = this.state;
 
     return (
-      <ul className="products">
-        {products.map((product) => {
-          return (
-            <li key={product.id}>
-              <img src={product.images[0].src.replace('.jpg', '_small.jpg')} />
-              {product.title}
-            </li>
-          );
-        })}
-      </ul>
+      <div>
+        <Title>List of products</Title>
+        <ul className="products">
+          {products.map((product) => {
+            return (
+              <li key={product.id}>
+                <img src={product.images[0].src.replace('.jpg', '_small.jpg')} />
+                {product.title}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     );
   }
 }

@@ -7,6 +7,7 @@ import '../../styles.css';
 const DummyComponent = () => <div>Hello World</div>;
 
 const ROUTES = [
+  {id: 'context', label: 'Context', component: DummyComponent, showSolution: true},
   {id: 'lifting-state-up', label: 'Lifting State Up', component: DummyComponent, showSolution: true},
   {id: 'lists', label: 'Rendering Lists', component: DummyComponent, showSolution: true},
   {id: 'lifecycle-unmount', label: 'Lifecycle Methods - Unmount', component: DummyComponent, showSolution: true},
