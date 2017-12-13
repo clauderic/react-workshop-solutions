@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const images = PropTypes.shape({ 
+const images = PropTypes.shape({
   src: PropTypes.string,
 });
 
-const productProps = PropTypes.shape({ 
-  id: PropTypes.number, 
-  title: PropTypes.string, 
-  images: PropTypes.arrayOf(images), 
+const productProps = PropTypes.shape({
+  id: PropTypes.number,
+  title: PropTypes.string,
+  images: PropTypes.arrayOf(images),
 })
 
 export default class ProductList extends React.Component {
