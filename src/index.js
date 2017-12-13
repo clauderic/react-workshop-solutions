@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Card, Stack, Heading, Page, Select, Tabs} from '@shopify/polaris';
 
 import '@shopify/polaris/styles.css';
-import { instanceOf } from 'prop-types';
+import solutions from './solutions';
 
 export default class WorkshopBoilerplate extends Component {
   state = {
@@ -66,7 +66,7 @@ export default class WorkshopBoilerplate extends Component {
                     <div className="tab-content">
                       {selectedTab === 0
                         ? <Route />
-                        : React.createElement(require(`./solutions/${id}/index.js`).default)
+                        : React.createElement(solutions[id].default)
                       }
                     </div>
                   </Tabs>
