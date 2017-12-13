@@ -4,7 +4,7 @@
 
 import React from "react";
 
-export default class App extends React.Component {
+export default class ProductList extends React.Component {
   state = {
     products: [],
   };
@@ -27,7 +27,7 @@ export default class App extends React.Component {
         {products.map((product) => {
           return (
             <li key={product.id}>
-              <img src={product.images[0].src} />
+              <img src={product.images[0].src.replace('.jpg', '_small.jpg')} />
               {product.title}
             </li>
           );
