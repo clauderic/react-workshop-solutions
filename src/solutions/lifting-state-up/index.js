@@ -2,12 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom";
 import SearchInput from "./SearchInput";
 import ProductList from "./ProductList";
-import {products} from "./products.js";
 
 export default class App extends React.Component {
   state = {
     filterString: '',
+    products: [],
   };
+
+  componentDidMount = () => {
+    fetch('https://www.kyliecosmetics.com/products.json')
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response.products)
+        this.setState({
+          products: response.products,
+        });
+      });
+  }
 
   handleFilter = (str) => {
     this.setState({
