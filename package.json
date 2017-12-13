@@ -1,6 +1,6 @@
 {
   "name": "react-workshop-solutions",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Solutions for the React Workshop",
   "main": "lib/index.js",
   "module": "es/index.js",
