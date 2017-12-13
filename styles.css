@@ -13,6 +13,12 @@ h1, h2, p, input, textarea, small {
   margin-bottom: 1rem;
 }
 
+code {
+  margin: 1em 0px;
+  white-space: pre-line;
+  word-break: break-word;
+}
+
 input, textarea {
   font-size: 1.4rem;
   padding: 1rem;

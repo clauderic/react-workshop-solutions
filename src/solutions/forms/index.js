@@ -31,12 +31,12 @@ export default class Solution extends React.Component {
 
     return (
       <div>
-        <pre>
+        <code>
           {JSON.stringify(this.state)}
-        </pre>
-        <input type="text" name="company" value="Shopify" />
+        </code>
+        <input type="text" name="company" value="Shopify" placeholder="Company" />
         <input type="text" name="name" value={name} placeholder="Name" onChange={this.handleNameChange} />
-        <textarea placeholder="message" value={message} onChange={this.handleMessageChange} />
+        <textarea name="message" placeholder="message" value={message} onChange={this.handleMessageChange} />
         <small>Number of characters remaining: {100 - message.length}</small>
       </div>
     );
