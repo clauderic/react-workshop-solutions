@@ -11,7 +11,7 @@ export default class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch('https://velvetmoustache.ca/products.json')
+    fetch('https://velvetmoustache.ca/products.json?limit=10')
       .then((response) => response.json())
       .then((response) => {
         this.setState({

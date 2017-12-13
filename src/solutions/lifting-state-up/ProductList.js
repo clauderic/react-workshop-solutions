@@ -44,7 +44,7 @@ class Product extends React.Component {
 
     return (
       <li key={product.id} onClick={this.handleClick}>
-        <img src={product.images[0].src} />
+        <img src={product.images[0].src.replace('.jpg', '_small.jpg')} />
         {product.title}
       </li>
     );
