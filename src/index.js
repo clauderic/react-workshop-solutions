@@ -3,7 +3,16 @@ import ReactDOM from 'react-dom';
 import {Card, Stack, Heading, Page, Select, Tabs} from '@shopify/polaris';
 
 import '@shopify/polaris/styles.css';
-import solutions from './solutions';
+
+const solutions = {
+  'component': require('./solutions/component').default,
+  'events-state': require('./solutions/events-state').default,
+  'lifecycle-mount': require('./solutions/lifecycle-mount').default,
+  'lifecycle-unmount': require('./solutions/lifecycle-unmount').default,
+  'lifting-state-up': require('./solutions/lifting-state-up').default,
+  'lists': require('./solutions/lists').default,
+  'refs': require('./solutions/refs').default,
+};
 
 export default class WorkshopBoilerplate extends Component {
   state = {
@@ -66,7 +75,7 @@ export default class WorkshopBoilerplate extends Component {
                     <div className="tab-content">
                       {selectedTab === 0
                         ? <Route />
-                        : React.createElement(solutions[id].default)
+                        : React.createElement(solutions[id])
                       }
                     </div>
                   </Tabs>
