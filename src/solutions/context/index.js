@@ -20,10 +20,18 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <ul>
-        <li><Price value={20} /></li>
-        <li><Price value={15} /></li>
-      </ul>
+      <div>
+        <code>
+          {`
+            <Price value={20} />
+            <Price value={15} />
+          `}
+        </code>
+        <ul>
+          <li><Price value={20} /></li>
+          <li><Price value={15} /></li>
+        </ul>
+      </div>
     );
   }
 }
