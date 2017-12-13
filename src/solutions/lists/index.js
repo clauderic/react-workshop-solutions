@@ -10,11 +10,14 @@ export default class App extends React.Component {
 
     return (
       <ul>
-        <li>
-          List all the products here
-        </li>
+        {products.map((product) => {
+          return (
+            <li>
+              {product.title}
+            </li>
+          );
+        })}
       </ul>
     );
   }
 }
-

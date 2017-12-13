@@ -26,9 +26,12 @@ export default class Counter extends React.Component {
     return (
       <div>
         <h1>Clicked: {clickCount} times</h1>
+        {clickCount >= 10
+          ? <p>You clicked the button more than 10 times 🎉</p>
+          : null
+        }
         <button onClick={this.incrementCount}>+1</button>
         <button onClick={this.resetCount}>Reset</button>
-        {clickCount > 10 ? 'I AM A UNICORN 🐑' : null}
       </div>
     );
   }

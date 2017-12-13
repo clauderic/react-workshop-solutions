@@ -3,20 +3,20 @@ import ReactDOM from 'react-dom';
 import {Card, Stack, Heading, Page, Select, Tabs} from '@shopify/polaris';
 
 import '@shopify/polaris/styles.css';
-
-const SOLUTIONS = {
-  'component': require('./solutions/component').default,
-  'events-state': require('./solutions/events-state').default,
-  'lifecycle-mount': require('./solutions/lifecycle-mount').default,
-  'lifecycle-unmount': require('./solutions/lifecycle-unmount').default,
-  'lifting-state-up': require('./solutions/lifting-state-up').default,
-  'lists': require('./solutions/lists').default,
-};
+import { instanceOf } from 'prop-types';
 
 export default class WorkshopBoilerplate extends Component {
   state = {
     routeIndex: 0,
     selectedTab: 0,
+  }
+
+  componentDidMount() {
+    document.addEventListener('click', (event) => {
+      if (event.target instanceof HTMLButtonElement) {
+        event.target.blur();
+      }
+    });
   }
 
   handleTabSelect = (tab) => {
@@ -66,7 +66,7 @@ export default class WorkshopBoilerplate extends Component {
                     <div className="tab-content">
                       {selectedTab === 0
                         ? <Route />
-                        : React.createElement(SOLUTIONS[id])
+                        : React.createElement(require(`./solutions/${id}/index.js`).default)
                       }
                     </div>
                   </Tabs>
