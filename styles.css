@@ -125,6 +125,11 @@ li {
   color: #E91E63;
 }
 
+input.bonus, input.bonus:focus {
+  border: 2px solid #E91E63;
+  box-shadow: none;
+}
+
 .products {
   list-style: none;
 }
@@ -138,7 +143,20 @@ li {
   border-bottom: 1px solid #EFEFEF;
 }
 
+.products--selectable li {
+  cursor: pointer;
+}
+
+.products--selectable li:hover {
+  background: #eee;
+}
+
 .products img {
   width: 70px;
   margin-right: 2rem;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #eee;
 }

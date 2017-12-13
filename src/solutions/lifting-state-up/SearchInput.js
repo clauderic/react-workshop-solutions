@@ -6,6 +6,7 @@ export default class SearchInput extends React.Component {
     return (
       <input
         placeholder="Filter products by name..."
+        className="bonus"
         onChange={onChange}
       />
     );
