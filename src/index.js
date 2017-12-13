@@ -1,26 +1,9 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Card, Stack, Heading, Page, Select, Tabs} from '@shopify/polaris';
+import SOLUTIONS from './solutions';
 
 import '@shopify/polaris/styles.css';
-
-import Components from './solutions/component';
-import EventsState from './solutions/events-state';
-import LifecycleMount from './solutions/lifecycle-mount';
-import LifecycleUnmount from './solutions/lifecycle-unmount';
-import LiftingStateUp from './solutions/lifting-state-up';
-import Lists from './solutions/lists';
-import Refs from './solutions/refs';
-
-const SOLUTIONS = {
-  'component': Components,
-  'events-state': EventsState,
-  'lifecycle-mount': LifecycleMount,
-  'lifecycle-unmount': LifecycleUnmount,
-  'lifting-state-up': LiftingStateUp,
-  'lists': Lists,
-  'refs': Refs,
-};
 
 export default class WorkshopBoilerplate extends Component {
   state = {

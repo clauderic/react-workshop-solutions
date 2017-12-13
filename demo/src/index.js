@@ -7,6 +7,7 @@ import '../../styles.css';
 const DummyComponent = () => <div>Hello World</div>;
 
 const ROUTES = [
+  {id: 'forms', label: 'Forms', component: DummyComponent, showSolution: true},
   {id: 'refs', label: 'Using Refs', component: DummyComponent, showSolution: true},
   {id: 'component', label: 'Components', component: DummyComponent, showSolution: true},
   {id: 'events-state', label: 'Events & State', component: DummyComponent, showSolution: true},
