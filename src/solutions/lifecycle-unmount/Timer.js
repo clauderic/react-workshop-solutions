@@ -1,10 +1,12 @@
 import React from "react";
 
 export default class Timer extends React.Component {
-  state = { lapse: 0 };
+  state = {
+    lapse: 0,
+  };
 
   componentDidMount() {
-    console.log("componentDidMount");
+    console.info("componentDidMount");
     this.timer = setInterval(() => {
       this.setState({
         lapse: this.state.lapse + 1
@@ -13,28 +15,34 @@ export default class Timer extends React.Component {
   }
 
   componentWillMount() {
-    console.log("componentWillMount");
+    console.info("componentWillMount");
   }
+
   componentWillUpdate() {
-    console.log("componentWillUpdate");
+    console.info("componentWillUpdate");
   }
+
   componentDidUpdate() {
-    console.log("componentDidUpdate");
+    console.info("componentDidUpdate");
   }
+
   componentWillReceiveProps() {
-    console.log("componentWillReceiveProps");
+    console.info("componentWillReceiveProps");
   }
+
   shouldComponentUpdate() {
-    console.log("shouldComponentUpdate");
+    console.info("shouldComponentUpdate");
     return true;
   }
+
   componentWillUnmount() {
     clearInterval(this.timer);
-    console.log("componentWillUnmount");
+    console.info("componentWillUnmount");
   }
 
   render() {
     const { lapse } = this.state;
-    return <div>{lapse}s</div>;
+
+    return <code>{lapse}s</code>;
   }
 }

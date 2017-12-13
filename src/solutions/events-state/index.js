@@ -26,8 +26,8 @@ export default class Counter extends React.Component {
     return (
       <div>
         <h1>Clicked: {clickCount} times</h1>
-        {clickCount >= 10
-          ? <p>You clicked the button more than 10 times 🎉</p>
+        {clickCount >= 5
+          ? <p className="bonus">You clicked the button more than 5 times 🎉</p>
           : null
         }
         <button onClick={this.incrementCount}>+1</button>

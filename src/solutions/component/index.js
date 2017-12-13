@@ -4,13 +4,13 @@
 
 import React from 'react';
 
-class LeWorkshop extends React.Component {
+class Workshop extends React.Component {
   render() {
-    const {nbAttendees} = this.props;
+    const {attendeeCount} = this.props;
 
     return (
       <div>
-        LeWorkshop has {nbAttendees} attendees
+        The workshop has {attendeeCount} attendees
       </div>
     )
   }
@@ -18,6 +18,6 @@ class LeWorkshop extends React.Component {
 
 export default class App extends React.Component {
   render() {
-    return <LeWorkshop nbAttendees={20}/>
+    return <Workshop attendeeCount={20}/>
   }
 }

@@ -3,7 +3,6 @@
 // -------------------------------------------------------------------------- //
 
 import React from "react";
-import {products} from "./products.js";
 
 export default class App extends React.Component {
   state = {
@@ -11,7 +10,7 @@ export default class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch('https://www.kyliecosmetics.com/products.json')
+    fetch('https://velvetmoustache.ca/products.json?limit=10')
       .then((response) => response.json())
       .then((response) => {
         this.setState({
@@ -24,10 +23,11 @@ export default class App extends React.Component {
     const {products} = this.state;
 
     return (
-      <ul>
+      <ul className="products">
         {products.map((product) => {
           return (
             <li key={product.id}>
+              <img src={product.images[0].src} />
               {product.title}
             </li>
           );

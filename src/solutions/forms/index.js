@@ -37,7 +37,7 @@ export default class Solution extends React.Component {
         <input type="text" name="company" value="Shopify" placeholder="Company" />
         <input type="text" name="name" value={name} placeholder="Name" onChange={this.handleNameChange} />
         <textarea name="message" placeholder="message" value={message} onChange={this.handleMessageChange} />
-        <small>Number of characters remaining: {100 - message.length}</small>
+        <small className="bonus">Number of characters remaining: {100 - message.length}</small>
       </div>
     );
   }
