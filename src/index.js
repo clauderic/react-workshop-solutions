@@ -4,21 +4,29 @@ import {Card, Stack, Heading, Page, Select, Tabs} from '@shopify/polaris';
 
 import '@shopify/polaris/styles.css';
 
-const solutions = {
-  'component': require('./solutions/component').default,
-  'events-state': require('./solutions/events-state').default,
-  'lifecycle-mount': require('./solutions/lifecycle-mount').default,
-  'lifecycle-unmount': require('./solutions/lifecycle-unmount').default,
-  'lifting-state-up': require('./solutions/lifting-state-up').default,
-  'lists': require('./solutions/lists').default,
-  'refs': require('./solutions/refs').default,
+import Components from './solutions/component';
+import EventsState from './solutions/events-state';
+import LifecycleMount from './solutions/lifecycle-mount';
+import LifecycleUnmount from './solutions/lifecycle-unmount';
+import LiftingStateUp from './solutions/lifting-state-up';
+import Lists from './solutions/lists';
+import Refs from './solutions/refs';
+
+const SOLUTIONS = {
+  'component': Components,
+  'events-state': EventsState,
+  'lifecycle-mount': LifecycleMount,
+  'lifecycle-unmount': LifecycleUnmount,
+  'lifting-state-up': LiftingStateUp,
+  'lists': Lists,
+  'refs': Refs,
 };
 
 export default class WorkshopBoilerplate extends Component {
   state = {
     routeIndex: 0,
     selectedTab: 0,
-  }
+  };
 
   componentDidMount() {
     document.addEventListener('click', (event) => {
@@ -75,7 +83,7 @@ export default class WorkshopBoilerplate extends Component {
                     <div className="tab-content">
                       {selectedTab === 0
                         ? <Route />
-                        : React.createElement(solutions[id])
+                        : React.createElement(SOLUTIONS[id])
                       }
                     </div>
                   </Tabs>
