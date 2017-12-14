@@ -19,10 +19,17 @@ export default class WorkshopBoilerplate extends Component {
     });
   }
 
-  handleTabSelect = (tab) => {
+  handleTabSelect = (tabIndex) => {
     this.setState({
-      selectedTab: tab,
-    })
+      selectedTab: tabIndex,
+    });
+  }
+
+  handleRouteChange = (index) => {
+    this.setState({
+      selectedTab: 0,
+      routeIndex: index,
+    });
   }
 
   render() {
@@ -39,7 +46,7 @@ export default class WorkshopBoilerplate extends Component {
               value={routeIndex}
               options={routes.map(({label}, index) => ({label, value: index}))}
               placeholder="Select"
-              onChange={(index) => this.setState({routeIndex: index})}
+              onChange={this.handleRouteChange}
             />
           </Stack>
         </div>
