@@ -7,7 +7,7 @@ import '@shopify/polaris/styles.css';
 
 export default class WorkshopBoilerplate extends Component {
   state = {
-    routeIndex: 0,
+    routeIndex: parseInt(localStorage.getItem('currentRouteIndex'), 0) || 0,
     selectedTab: 0,
   };
 
@@ -30,6 +30,8 @@ export default class WorkshopBoilerplate extends Component {
       selectedTab: 0,
       routeIndex: index,
     });
+
+    localStorage.setItem('currentRouteIndex', index);
   }
 
   render() {
