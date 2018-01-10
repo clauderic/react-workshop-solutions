@@ -26,6 +26,12 @@ export default class Solution extends React.Component {
   handleNameChange = this.handleChange('name');
   handleMessageChange = this.handleChange('message');
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    alert(JSON.stringify(this.state));
+  }
+
   render() {
     const {name, message} = this.state;
 
@@ -34,10 +40,13 @@ export default class Solution extends React.Component {
         <code>
           {JSON.stringify(this.state)}
         </code>
-        <input type="text" name="company" value="Shopify" placeholder="Company" />
-        <input type="text" name="name" value={name} placeholder="Name" onChange={this.handleNameChange} />
-        <textarea name="message" placeholder="message" value={message} onChange={this.handleMessageChange} />
-        <small className="bonus">Number of characters remaining: {100 - message.length}</small>
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" name="company" value="Shopify" placeholder="Company" />
+          <input type="text" name="name" value={name} placeholder="Name" onChange={this.handleNameChange} />
+          <textarea name="message" placeholder="message" value={message} onChange={this.handleMessageChange} />
+          <small className="bonus">Number of characters remaining: {100 - message.length}</small>
+          <button type="submit">Submit</button>
+        </form>
       </div>
     );
   }
