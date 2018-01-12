@@ -64,11 +64,11 @@ export default class WorkshopBoilerplate extends Component {
                     tabs={[
                       {
                         id: 'exercise',
-                        title: 'Exercise'
+                        content: 'Exercise'
                       },
                       {
                         id: 'solution',
-                        title: 'Solution'
+                        content: 'Solution'
                       },
                     ]}
                   >

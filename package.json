@@ -20,7 +20,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@shopify/polaris": "^1.8.3",
+    "@shopify/polaris": "^1.9.1",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
