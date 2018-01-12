@@ -18,8 +18,10 @@ export default class App extends React.Component {
     const { showTimer } = this.state;
     return (
       <div>
-        <label>Show Timer</label>
-        <input type="checkbox" onChange={this.toggleShow} checked={showTimer} />
+        <label>
+          <input type="checkbox" onChange={this.toggleShow} checked={showTimer} />
+          Show Timer
+        </label>
         {showTimer ? <Timer /> : null}
       </div>
     );

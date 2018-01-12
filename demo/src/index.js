@@ -13,7 +13,6 @@ const ROUTES = [
   {id: 'lifecycle-unmount', label: 'Lifecycle Methods - Unmount', component: DummyComponent, showSolution: true},
   {id: 'forms', label: 'Forms', component: DummyComponent, showSolution: true},
   {id: 'refs', label: 'Using Refs', component: DummyComponent, showSolution: true},
-  {id: 'forms', label: 'Forms', component: DummyComponent, showSolution: true},
 ];
 
 render(<WorkshopBoilerplate routes={ROUTES} />, document.querySelector('#demo'));
