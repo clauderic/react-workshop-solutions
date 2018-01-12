@@ -4,27 +4,31 @@
 
 import React from "react";
 
-export default class Solution extends React.Component {
+export default class Form extends React.Component {
   state = {
-    company: 'Shopify',
-    name: '',
-    message: '',
+    title: '',
+    description: '',
+    price: null,
+    taxable: false,
   }
 
-  handleChange = (key) => (event) => {
-    let value = event.target.value;
-
-    if (key === 'message') {
-      value = value.substring(0, 100);
+  handleChange = ({target: {checked, name, value}}) => {
+    switch (name) {
+      case 'description':
+        value = value.substring(0, 100);
+        break;
+      case 'price':
+        value = parseInt(value, 10);
+        break;
+      case 'taxable':
+        value = checked;
+        break;
     }
 
     this.setState({
-      [key]: value,
+      [name]: value,
     });
   }
-
-  handleNameChange = this.handleChange('name');
-  handleMessageChange = this.handleChange('message');
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -32,19 +36,30 @@ export default class Solution extends React.Component {
     alert(JSON.stringify(this.state));
   }
 
+  renderStateToJSON() {
+    return (
+      <code>
+        {JSON.stringify(this.state, null, 2)}
+      </code>
+    )
+  }
+
   render() {
-    const {name, message} = this.state;
+    const {title, description, price, taxable} = this.state;
 
     return (
       <div>
-        <code>
-          {JSON.stringify(this.state)}
-        </code>
+        {this.renderStateToJSON()}
+
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="company" value="Shopify" placeholder="Company" />
-          <input type="text" name="name" value={name} placeholder="Name" onChange={this.handleNameChange} />
-          <textarea name="message" placeholder="message" value={message} onChange={this.handleMessageChange} />
-          <small className="bonus">Number of characters remaining: {100 - message.length}</small>
+          <input type="text" name="title" value={title} placeholder="Title" onChange={this.handleChange} />
+          <textarea name="description" placeholder="Description" value={description} onChange={this.handleChange} />
+          <small className="bonus">Number of characters remaining: {100 - description.length}</small>
+          <input type="number" name="price" placeholder="Price" min={0} value={price} onChange={this.handleChange} />
+          <label>
+            <input type="checkbox" name="taxable" checked={taxable} onChange={this.handleChange} />
+            Taxable
+          </label>
           <button type="submit">Submit</button>
         </form>
       </div>

@@ -16,7 +16,7 @@ h1, h2, p, input, textarea, small {
 code {
   display: block;
   margin: 1em 0px;
-  white-space: pre-line;
+  white-space: pre-wrap;
   word-break: break-word;
 }
 
@@ -38,10 +38,17 @@ input:not([type="checkbox"]):focus, textarea:focus {
 input[type="checkbox"] {
   display: inline-block;
   margin: 0 0.8rem;
+  margin-left: 0;
 }
 
 textarea {
   min-height: 100px;
+}
+
+label {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
 }
 
 small {
